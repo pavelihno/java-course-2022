@@ -17,13 +17,11 @@ public class LineFlyweightFactory{
     }
 
     public LineFlyweight getLine(String c){
-        //check if we've already created a line with this color
         for(LineFlyweight line: pool){
             if(line.getColor().equals(c)){
                 return line;
             }
         }
-        //if not, create one and save it to the pool
         LineFlyweight line = new Line(c);
         pool.add(line);
         return line;
